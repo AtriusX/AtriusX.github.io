@@ -1,2 +1,2 @@
-# atriusx.github.io
+# AtriusX.github.io
 Personal Website
