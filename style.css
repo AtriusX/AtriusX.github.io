@@ -1,0 +1,30 @@
+* {
+	font-family: Segoe UI;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background: rgb(0,102,255);
+	overflow: hidden;
+}
+
+#landing {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	top: 50%;
+	white-space: nowrap;
+	text-align: center;
+	font-size: 40px;
+	transform: translateY(-50%);
+	color: white;
+}
+
+#landing_text {
+	font-size: 100px;
+	display: block;
+}
