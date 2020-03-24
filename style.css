@@ -53,6 +53,8 @@ body {
 	font-weight: 300;
 	font-size: 1rem;
 	opacity: 0.5;
+	-moz-user-select: none;
+	-webkit-user-select: none;
 	transition: opacity 0.3s;
 }
 
