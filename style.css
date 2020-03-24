@@ -8,12 +8,12 @@ body {
 	position: absolute;
 	height: 100%;
 	width: 100%;
-	background: rgb(0,102,255);
+	background: rgb(31, 0, 51);
 	overflow: hidden;
 }
 
 #landing {
-	position: relative;
+	position: absolute;
 	display: inline-block;
 	width: 100%;
 	top: 50%;
@@ -27,4 +27,9 @@ body {
 #landing_text {
 	font-size: 100px;
 	display: block;
+}
+
+canvas {
+	position: absolute;
+	z-index: -900;
 }
