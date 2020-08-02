@@ -1,0 +1,25 @@
+* {
+	font-family: Segoe UI;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background: rgb(31, 0, 51);
+	overflow: hidden;
+}
+
+canvas {
+  z-index: -900;
+  display: block;
+  position: relative; 
+  width: 100%;
+}
+
+img { 
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+}
