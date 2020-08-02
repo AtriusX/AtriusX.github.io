@@ -16,10 +16,9 @@ export default function(sketch: p5) {
         }
     };
     let counter = 0;
-    sketch.draw  = function() {
+    sketch.draw = function() {
 
         document.body.style.backgroundColor = `hsl(${276 + Math.sin(counter += 0.001) * 70}, 100%, 10%)`;
-        sketch.resizeCanvas(window.innerWidth, window.innerHeight);
         sketch.background(30, 0, 50, 50);
         sketch.noStroke();
         particles.forEach(p => {
@@ -34,16 +33,19 @@ export default function(sketch: p5) {
             if (p.hue > 230)
                 p.hue = 170;
             if (p.x < 0)
-                p.x = width;
+                p.x = sketch.windowWidth;
             if (p.y < 0)
-                p.y = height;
-            if (p.x > width)
+                p.y = sketch.windowHeight;
+            if (p.x > sketch.windowWidth)
                 p.x = 0;
-            if (p.y > height)
+            if (p.y > sketch.windowHeight)
                 p.y = 0;
         });
     }
-    
+
+    sketch.windowResized = function() {
+        sketch.resizeCanvas(window.innerWidth, window.innerHeight);
+    }
 }
 
 class Particle {
