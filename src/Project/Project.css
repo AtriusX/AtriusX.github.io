@@ -17,4 +17,6 @@
 
 .container:hover {
     transform: translateY(-5px);
+    background-color: rgba(100, 100, 100, 0.6);
+    border: white 1px solid;
 }
