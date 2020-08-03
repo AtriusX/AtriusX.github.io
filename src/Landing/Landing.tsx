@@ -1,14 +1,24 @@
-import React from "react";
+import React from 'react';
 import './Landing.css';
-import Project from "../Project/Project";
-export default class Landing extends React.Component {
+import Project from '../Project/Project';
+import Avatar from '../Avatar/Avatar';
 
-    public render() {
-        return <div id={"landing"}>
-            <span className={"landing_text"}>Hey! I'm Atrius!</span>
-            <div className={"description"}>Check out some of the projects I've contributed to below~!</div>
-            <Project url={"https://github.com/atriusx/dungeonkit"} name={"DungeonKit"}/>
-            <Project url={"https://github.com/DV8FromTheWorld/JDA"} name={"JDA"}/>
+export default function() {
+    return <div id={"landing"}>
+        <span className={"landing_text"}>
+            Hey! I'm Atrius!
+        </span>
+        <Avatar 
+            url={"https://avatars0.githubusercontent.com/u/7331441?s=460&u=d4025a5731648accb32ec70057dc1df5e514a588&v=4"}
+        />
+        <div className={"description"}>
+            Check out some of the projects I've contributed to below~!
         </div>
-    }
+        <Project 
+            url={"https://github.com/atriusx/dungeonkit"} name={"DungeonKit"}
+        />
+        <Project 
+            url={"https://github.com/DV8FromTheWorld/JDA"} name={"JDA"}
+        />
+    </div>
 }
