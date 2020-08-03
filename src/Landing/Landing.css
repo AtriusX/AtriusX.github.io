@@ -8,13 +8,17 @@
 	font-size: 40px;
 	transform: translateY(-50%);
 	color: white;
-	animation: float 60s infinite, spectre 100s infinite;
+	animation: float 60s infinite;
 }
 
 .landing_text {
 	font-size: 100px;
 	display: block;
 	opacity: 1;
+}
+
+.description {
+	position: relative;
 }
 
 @keyframes float {
