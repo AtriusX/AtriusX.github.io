@@ -15,13 +15,6 @@ export default class Github extends React.Component {
                     if (event.preventDefault) event.preventDefault(); 
                 }} 
             />
-            <span
-                onMouseDown={(event) => { 
-                    if (event.preventDefault) event.preventDefault(); 
-                }} 
-            >
-                Check me out on GitHub!
-            </span>
         </a>
     }
 }
