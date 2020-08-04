@@ -14,19 +14,6 @@
 	transform: translateY(-50%);	
 }
 
-.github > span {
-	color: #FFFFFF;
-	position: relative;
-	top: 0.05em;
-	left: 0.3em;
-	font-weight: 300;
-	font-size: 1rem;
-	opacity: 0.5;
-	-moz-user-select: none;
-	-webkit-user-select: none;
-	transition: opacity 0.3s;
-}
-
 .github > *:hover {
 	opacity: 1;
 }
