@@ -3,18 +3,18 @@ import './App.css';
 import Background from './Background/Background';
 import sketch from "./Background/sketch"
 import * as p5 from "p5";
-import Github from './Github/Github';
+import Navbar from './Navbar/Navbar';
 import Landing from './Landing/Landing';
 
 class App extends React.Component {
   public render() {
     return <>
-      <Landing />
-      <Github />
+      <Navbar />
       <Background 
         sketch={sketch} 
         onP5Changed={this.onChanged}
       />      
+      <Landing />
     </>
   }
 

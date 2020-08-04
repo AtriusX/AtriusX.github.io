@@ -1,8 +1,12 @@
-img {
+.avatar {
     border-radius: 1000px;
     z-index: 1000;
     width: 200px;
+    height: 200px;
     transition: all ease-in-out 1.25s;
+    border: white solid 3px;
+    margin: 0.5em 0em;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 img:hover {
