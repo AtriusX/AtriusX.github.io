@@ -1,14 +1,15 @@
 import p5 from "p5";
 import * as React from "react";
+import { Component, RefObject } from "react";
 
 export interface IProps {
   sketch: (sketch: p5) => void;
   onP5Changed?: (sketch: p5) => void;
 }
 
-export default class P5Wrapper extends React.Component<IProps, {}> {
+export default class P5Wrapper extends Component<IProps, {}> {
   public canvas!: p5;
-  private wrapper: React.RefObject<HTMLDivElement> = React.createRef();
+  private wrapper: RefObject<HTMLDivElement> = React.createRef();
 
   public componentDidMount() {
     this.setSketch(this.props);

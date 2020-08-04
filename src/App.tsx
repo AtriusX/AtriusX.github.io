@@ -6,23 +6,17 @@ import * as p5 from "p5";
 import Navbar from './Navbar/Navbar';
 import Landing from './Landing/Landing';
 
-class App extends React.Component {
-  public render() {
-    return <>
-      <Navbar />
-      <Background 
-        sketch={sketch} 
-        onP5Changed={this.onChanged}
-      />      
-      <Landing />
-    </>
-  }
-
-  private onChanged(p: p5) {
-    console.log(p);
-  }
+export default function() {
+  return <>
+    <Navbar />
+    <Background 
+      sketch={sketch} 
+      onP5Changed={onChanged}
+    />      
+    <Landing />
+  </>
 }
 
-
-
-export default App;
+function onChanged(p: p5) {
+  console.log(p);
+}
