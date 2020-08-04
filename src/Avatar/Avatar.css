@@ -2,4 +2,9 @@ img {
     border-radius: 1000px;
     z-index: 1000;
     width: 200px;
+    transition: all ease-in-out 1.25s;
+}
+
+img:hover {
+    rotate: 2160deg;
 }
