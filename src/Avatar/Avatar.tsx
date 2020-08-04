@@ -2,7 +2,8 @@ import React from 'react';
 import './Avatar.css';
 
 export default function(props: { url: string }) {
-    return <img 
+    return <img
+        className={"avatar"}
         src={props.url} 
         alt={""}
         onMouseDown={(event) => { 
