@@ -16,15 +16,3 @@
 .button:hover {
     font-size: 1.1em;
 }
-
-@media screen and (max-width: 720px) {
-
-    .button {
-        position: relative;
-        color: black;
-    }
-
-    .box {
-        height: 100%;
-    }
-}

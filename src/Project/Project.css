@@ -4,30 +4,19 @@
 }
 
 .container {
-    display: block;
     margin-top: 15px !important;
     background-color: rgba(100, 100, 100, 0.1);
+    width: 300px;
     margin: auto;
-    margin: 0 0.75em;
+    margin: 0.75em;
     padding-bottom: 10px;
     border-left: white 5px solid;
-    font-size: 1.3em;
+    transition: all 0.3s;
+    display: inline-block;
 }
 
-
-
-@media screen and (min-width: 768px) {
-
-    .container {
-        transition: all 0.3s;
-        display: inline-block;
-        width: 300px;
-        font-size: 1.5em;
-    }
-    
-    .container:hover {
-        transform: translateY(-5px);
-        background-color: rgba(100, 100, 100, 0.6);
-        border: white 1px solid;
-    }  
+.container:hover {
+    transform: translateY(-5px);
+    background-color: rgba(100, 100, 100, 0.6);
+    border: white 1px solid;
 }
