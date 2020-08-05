@@ -24,11 +24,11 @@ export default function(sketch: p5) {
     let counter = 0;
     sketch.draw = async function() {
         document.body.style.backgroundColor = `hsl(${276 + Math.sin(counter += 0.001) * 70}, 100%, 10%)`;
-        sketch.background(30, 0, 50, 50);
+        sketch.background(30, 0, 50, 150);
         particles.forEach(p => {
             sketch.fill(sketch.color(`hsl(${p.hue += 2}, 100%, 60%)`));
             if (sketch.windowWidth >= 768) {
-                sketch.stroke(p.x, p.y, 255, Math.abs(p.velX * 25 | Math.sin(p.velY)));
+                sketch.stroke(p.x, p.y, 255, Math.abs(p.velX * 30 | Math.sin(p.velY)));
                 sketch.line(p.x, p.y, p.x ^ p.y, p.y << 2);
             }
             sketch.noStroke();
