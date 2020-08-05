@@ -4,6 +4,7 @@
 	left: 1ch;
 	text-decoration: none;
 	transform: translateY(-50%);
+	z-index: 1000;
 }
 
 .github > img {
