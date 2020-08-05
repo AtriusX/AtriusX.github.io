@@ -3,7 +3,7 @@ import './Project.css';
 
 export default function(props: { url: string, name: string }) {
     return <a 
-        className={"link container"} 
+        className={"container"} 
         href={props.url} 
         onMouseDown={(event) => { 
             if (event.preventDefault) event.preventDefault(); 
