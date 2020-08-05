@@ -11,9 +11,9 @@ export default function() {
         <Avatar 
             url={"https://avatars0.githubusercontent.com/u/7331441?s=460&u=d4025a5731648accb32ec70057dc1df5e514a588&v=4"}
         />
-        <div className={"description"}>
+        <p className={"description"}>
             Check out some of the projects I've contributed to below~!
-        </div>
+        </p>
         <Project 
             url={"https://github.com/atriusx/dungeonkit"} name={"DungeonKit"}
         />
