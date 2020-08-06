@@ -2,19 +2,14 @@ import * as p5 from "p5";
 
 export default function(sketch: p5) {
     let particles: Array<Particle> = [];
-    let width  = sketch.windowWidth;
-    let height = sketch.windowHeight;
-
-    // if (sketch.windowWidth < 768) {
-    //     return;
-    // }
-
+    let width  = () => sketch.windowWidth;
+    let height = () => document.body.scrollHeight
     sketch.setup = async function() {
-        sketch.createCanvas(width, height);
-        for (let i = 0; i < (width < 768 ? 50 : 150); i++) {
+        sketch.createCanvas(width(), height());
+        for (let i = 0; i < (width() < 768 ? 50 : 75); i++) {
             particles.push(new Particle(
-                Math.random() * width,
-                Math.random() * height,
+                Math.random() * width(),
+                Math.random() * height(),
                 Math.random() - 0.5,
                 Math.random() - 0.5
             ));
@@ -47,9 +42,9 @@ export default function(sketch: p5) {
             if (p.hue > 230) p.hue = 170;
         });
     }
-
-    sketch.windowResized = async function() {
-        sketch.resizeCanvas(window.innerWidth, window.innerHeight);
+    
+    sketch.windowResized = function() {
+        sketch.resizeCanvas(width(), height());
     }
 }
 
