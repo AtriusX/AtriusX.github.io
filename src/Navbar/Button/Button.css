@@ -2,6 +2,7 @@
     position: relative;
     display: inline-block;
     width: 25%;
+    height: 100%;
 }
 
 .button {
@@ -11,20 +12,17 @@
     vertical-align: middle;
     text-decoration: none;
     transition: all 0.2s;
+    
 }
 
 .button:hover {
     font-size: 1.1em;
 }
-
+/* TODO: Fix this to be mobile-first */
 @media screen and (max-width: 720px) {
 
     .button {
         position: relative;
         color: black;
-    }
-
-    .box {
-        height: 100%;
     }
 }

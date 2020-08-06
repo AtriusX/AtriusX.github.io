@@ -8,9 +8,10 @@ export default function() {
     return <div className={"navbar"}>
         <Github />
         <div className={"options"}>
-            <Button url={""} title={"Portfolio"} />
-            <Button url={""} title={"Blog"} />
-            <Button url={""} title={"About Me"} />
+            <Button url={"/"} title={"Home"} />
+            <Button url={"/portfolio"} title={"Portfolio"} />
+            <Button url={"/blog"} title={"Blog"} />
+            <Button url={"/about"} title={"About Me"} />
         </div>
     </div>
 }
