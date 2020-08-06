@@ -7,11 +7,11 @@ import './Navbar.css';
 export default function() {
     return <div className={"navbar"}>
         <Github />
-        <div className={"options"}>
-            <Button url={"/"} title={"Home"} />
-            <Button url={"/portfolio"} title={"Portfolio"} />
-            <Button url={"/blog"} title={"Blog"} />
-            <Button url={"/about"} title={"About Me"} />
-        </div>
+        <ul className={"options"}>
+            <li><Button url={"/"} title={"Home"} /></li>
+            <li><Button url={"/portfolio"} title={"Portfolio"} /></li>
+            <li><Button url={"/blog"} title={"Blog"} /></li>
+            <li><Button url={"/about"} title={"About Me"} /></li>
+        </ul>
     </div>
 }

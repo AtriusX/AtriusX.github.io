@@ -28,4 +28,9 @@
         text-align: center;
         font-size: 2em; 
     }
+
+    .options > li {
+        display: inline;
+        list-style: none;
+    }
 }
