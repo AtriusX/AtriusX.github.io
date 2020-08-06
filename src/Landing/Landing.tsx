@@ -8,7 +8,7 @@ export default function() {
         <span className={"landing_text"}>
             Hey! I'm Atrius!
         </span>
-        <Avatar 
+        <Avatar
             url={"https://avatars0.githubusercontent.com/u/7331441?s=460&u=d4025a5731648accb32ec70057dc1df5e514a588&v=4"}
         />
         <p className={"description"}>

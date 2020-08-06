@@ -15,7 +15,7 @@ export default function() {
   return <>
     <Background 
     sketch={sketch} 
-    onP5Changed={onChanged}
+    onP5Changed={ p => console.log(p) }
     />
     <Navbar />
     <Switch>
@@ -25,8 +25,4 @@ export default function() {
       <Route exact path={"/about"} component={About} />
     </Switch>
   </>
-}
-
-function onChanged(p: p5) {
-  console.log(p);
 }
