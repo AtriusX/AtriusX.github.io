@@ -1,19 +1,29 @@
 import React from 'react';
 import './App.css';
+import { Route, Switch } from 'react-router-dom';
+import Home from './pages/Home';
+import Portfolio from './pages/Portfolio';
+import Blog from './pages/Blog';
+import About from './pages/About';
 import Background from './Background/Background';
 import sketch from "./Background/sketch"
-import * as p5 from "p5";
+import p5 from "p5";
 import Navbar from './Navbar/Navbar';
-import Landing from './Landing/Landing';
+
 
 export default function() {
   return <>
-    <Navbar />
     <Background 
-      sketch={sketch} 
-      onP5Changed={onChanged}
-    />      
-    <Landing />
+    sketch={sketch} 
+    onP5Changed={onChanged}
+    />
+    <Navbar />
+    <Switch>
+      <Route exact path={"/"} component={Home} />
+      <Route exact path={"/portfolio"} component={Portfolio} />
+      <Route exact path={"/blog"} component={Blog} />
+      <Route exact path={"/about"} component={About} />
+    </Switch>
   </>
 }
 
