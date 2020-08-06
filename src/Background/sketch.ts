@@ -28,11 +28,11 @@ export default function(sketch: p5) {
             }
             sketch.noStroke();
             sketch.circle(p.x, p.y, 2);
-            p.x = (p.x + p.velX * 2) % sketch.windowWidth;
-            p.y = (p.y + p.velY * 2) % sketch.windowHeight;
+            p.x = (p.x + p.velX * 2) % width();
+            p.y = (p.y + p.velY * 2) % height();
             
-            if (p.x < 0) p.x = sketch.windowWidth;
-            if (p.y < 0) p.y = sketch.windowHeight;
+            if (p.x < 0) p.x = width();
+            if (p.y < 0) p.y = height();
             // Randomly change velocity
             if (Math.random() * 100 > 99) {
                 p.velX = Math.random() * 2 - 1;
