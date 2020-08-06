@@ -3,7 +3,7 @@ import * as p5 from "p5";
 export default function(sketch: p5) {
     let particles: Array<Particle> = [];
     let width  = () => sketch.windowWidth;
-    let height = () => document.body.scrollHeight
+    let height = () => sketch.windowHeight;
     sketch.setup = async function() {
         sketch.createCanvas(width(), height());
         for (let i = 0; i < (width() < 768 ? 50 : 75); i++) {
@@ -42,7 +42,7 @@ export default function(sketch: p5) {
             if (p.hue > 230) p.hue = 170;
         });
     }
-    
+
     sketch.windowResized = function() {
         sketch.resizeCanvas(width(), height());
     }
