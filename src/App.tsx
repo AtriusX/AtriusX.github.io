@@ -7,9 +7,7 @@ import Blog from './pages/Blog';
 import About from './pages/About';
 import Background from './Background/Background';
 import sketch from "./Background/sketch"
-import p5 from "p5";
 import Navbar from './Navbar/Navbar';
-
 
 export default function() {
   return <>
