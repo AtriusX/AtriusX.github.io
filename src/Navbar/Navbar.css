@@ -1,14 +1,16 @@
-.navbar {        
-    position: absolute;
+#navbar {        
+    position: fixed;
     top: 0px;
     margin: auto;
-    background-color: transparent;
     width: 100%;
     height: 60px;
+    z-index: 9;
 }
 
 .options {
-    display: none;
+    position: absolute;
+    top: 0;
+    text-align: center;
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -16,7 +18,7 @@
 
 @media(min-width: 768px) {
     
-    .navbar {
+    #navbar {
         background-color: rgba(0, 0, 0, 0.4);
         backdrop-filter: blur(3px) saturate(250%);
     }
@@ -27,10 +29,5 @@
         display: block;
         text-align: center;
         font-size: 2em; 
-    }
-
-    .options > li {
-        display: inline;
-        list-style: none;
     }
 }

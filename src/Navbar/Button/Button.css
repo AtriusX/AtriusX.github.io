@@ -1,28 +1,43 @@
 .box {
     position: relative;
     display: inline-block;
-    width: 25%;
+    width: 20%;
     height: 100%;
 }
 
 .button {
     color: white;
     position: relative;
+    display: inline-block;
+    top: 50%;
+    transform: translateY(-25%);
     height: 100%;
     vertical-align: middle;
     text-decoration: none;
     transition: all 0.2s;
-    
 }
 
-.button:hover {
-    font-size: 1.1em;
-}
-/* TODO: Fix this to be mobile-first */
-@media screen and (max-width: 720px) {
+@media screen and (min-width: 768px) {
 
-    .button {
+    .box {
         position: relative;
-        color: black;
+        display: inline-block;
+        width: 25%;
+        height: 100%;
+    }
+    
+    .button {
+        color: white;
+        position: relative;
+        top: 0;
+        display: inline;
+        vertical-align: middle;
+        transform: none;
+        text-decoration: none;
+        transition: all 0.2s;
+    }
+    
+    .button:hover {
+        font-size: 1.1em;
     }
 }
