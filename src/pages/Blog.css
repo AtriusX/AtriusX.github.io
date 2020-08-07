@@ -12,6 +12,8 @@
 }
 
 .blog-title {
+    display: block;
+    width: 0;
     text-decoration: none;
 }
 
