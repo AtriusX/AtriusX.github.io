@@ -1,0 +1,25 @@
+
+.blogpost {
+    position: relative;
+    color: white;
+    top: 60px;
+    padding: 0.5em;
+    margin: 0.5em auto;
+    text-align: justify;
+    border-radius: 1px;        
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 90% !important;
+}
+
+@media screen and (min-width: 768px) {
+
+    .blogpost {
+        position: relative;
+        width: 75% !important;
+        padding: 1.75em 3em;
+        border-radius: 5px;
+        margin: 0.75em auto;
+        font-size: 1.7rem;
+        backdrop-filter: blur(3px) saturate(250%);
+    }
+}
