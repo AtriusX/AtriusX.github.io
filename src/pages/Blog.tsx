@@ -7,7 +7,7 @@ import { Link, HashRouter } from 'react-router-dom';
 
 export default class Blog extends Component {
 
-    componentWillMount() {
+    componentWillMount() {        
         let entries = Object.entries(posts);
         let i = entries.length;
         Promise.all(
@@ -15,10 +15,10 @@ export default class Blog extends Component {
         ).then(data => {
             let p = data.map(([title, content]) =>
                 Promise.resolve(content).then(text =>
-                    <div key={i--} className={"blogpost"}>
+                    <div key={i} className={"blogpost"}>
                         <HashRouter>
                             <Link 
-                                to={`/blog/${i}`} 
+                                to={`/blog/${i--}`} 
                                 className={"blog-title"}
                             >
                                 <h1>{title}</h1>
