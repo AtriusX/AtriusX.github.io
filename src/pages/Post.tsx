@@ -1,33 +1,31 @@
 import React, { Component } from 'react';
-import Markdown from 'react-markdown';
 import posts from '../posts/posts';
+import Blogpost from '../Blogpost/Blogpost';
 
-export default class Post extends Component<any, { title: string | undefined, post: JSX.Element | undefined }> {
-    state = { title: undefined, post: undefined }
-    
+export default class Post extends Component<any, { post: JSX.Element | undefined }> {
+    state = { post: undefined }
+
     componentDidMount() {
         const { match: { params }} = this.props;
         let id = params.id - 1;
         let entries = Object.entries(posts)
         // Ignore IDs that aren't valid
         if (entries[id] === undefined) {
-            this.setState({ title: undefined, post: undefined });
+            this.setState({ post: undefined });
             return;
         }
         // Process ID into post
         let [name, file] = entries[id];
         fetch(file).then(f => f.text()).then(text => this.setState({
-            title: name, post: <Markdown source={text} />
+            post: <Blogpost title={name} text={text} />
         }));
     }
 
     public render() {
         if (this.state.post !== undefined) {
-            return <div className={"blogpost"}>
-                <h1>{this.state.title}</h1>
-                <br/>
+            return <> 
                 {this.state.post}
-            </div>
+            </>
         } else {
             return <> 404 </>
         }
