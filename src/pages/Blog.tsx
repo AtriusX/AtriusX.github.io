@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import posts from '../posts/posts';
 import Markdown from 'react-markdown';
 import './Blog.css';
+import { Link, HashRouter } from 'react-router-dom';
 
 export default class Blog extends Component {
 
@@ -15,7 +16,15 @@ export default class Blog extends Component {
             let p = data.map(([title, content]) =>
                 Promise.resolve(content).then(text =>
                     <div key={i--} className={"blogpost"}>
-                        <h1>{title}</h1>
+                        <HashRouter>
+                            <Link 
+                                to={`/blog/${i}`} 
+                                className={"blog-title"}
+                            >
+                                <h1>{title}</h1>
+                            </Link>
+                        </HashRouter>
+                        <br/>
                         <Markdown source={text} />
                     </div>
                 )

@@ -11,6 +11,23 @@
     width: 90% !important;
 }
 
+.blog-title {
+    text-decoration: none;
+}
+
+.blog-title > h1 {
+    border-left: 3px solid white;
+    padding-left: 1rem;
+    margin-bottom: 10px;
+    color: white;
+    font-style: normal;
+    transition: all 0.2s;
+}
+
+.blog-title > h1:hover {
+    color: darkorchid;
+}
+
 @media screen and (min-width: 768px) {
 
     .blogpost {
