@@ -1,14 +1,7 @@
-// @ts-ignore
-import test from './Test.md';
-// @ts-ignore
-import other from './Other.md';
-// @ts-ignore
-import third from './Third.md'
-
 const posts = {
-    "Test": test,
-    "Other": other,
-    "E": third
+    "Test": require('./Test.md'),
+    "Other": require('./Other.md'),
+    "E": require('./Third.md')
 }
 
 export default posts;
