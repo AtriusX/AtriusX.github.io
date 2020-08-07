@@ -1,0 +1,44 @@
+.blogpost {
+    position: relative;
+    color: white;
+    top: 60px;
+    padding: 0.5em;
+    margin: 0.5em auto;
+    text-align: justify;
+    border-radius: 1px;        
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 90% !important;
+}
+
+.blog-title {
+    display: block;
+    width: fit-content;
+    text-decoration: none;
+}
+
+.blog-title > h1 {
+    border-left: 3px solid white;
+    padding-left: 0.5rem;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    color: white;
+    font-style: normal;
+    transition: all 0.2s;
+}
+
+.blog-title > h1:hover {
+    color: darkorchid;
+}
+
+@media screen and (min-width: 768px) {
+
+    .blogpost {
+        position: relative;
+        width: 75% !important;
+        padding: 1.75em 3em;
+        border-radius: 5px;
+        margin: 0.75em auto;
+        font-size: 1.7rem;
+        backdrop-filter: blur(3px) saturate(250%);
+    }
+}
