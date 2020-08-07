@@ -1,4 +1,7 @@
-
+#blog-container {
+    position: relative;
+    padding-bottom: 5em;
+}
 .blogpost {
     position: relative;
     color: white;
@@ -13,13 +16,14 @@
 
 .blog-title {
     display: block;
-    width: 0;
+    width: fit-content;
     text-decoration: none;
 }
 
 .blog-title > h1 {
     border-left: 3px solid white;
-    padding-left: 1rem;
+    padding-left: 0.5rem;
+    padding-bottom: 5px;
     margin-bottom: 10px;
     color: white;
     font-style: normal;
