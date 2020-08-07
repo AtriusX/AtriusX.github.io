@@ -18,7 +18,7 @@ export default function() {
     <Navbar />
     <Switch>
       <Route exact path={"/"} component={Home} />
-      <Route path={"/portfolio"} component={Portfolio} />
+      <Route exact path={"/portfolio"} component={Portfolio} />
       <Route exact path={"/blog"} component={Blog} />
       <Route exact path={"/about"} component={About} />
     </Switch>
