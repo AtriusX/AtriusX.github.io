@@ -4,8 +4,8 @@ import posts from '../posts/posts';
 import Markdown from 'react-markdown';
 import './Blog.css';
 
-export default class Blog extends Component<any, [{ name: string, content: string }]> {
-    
+export default class Blog extends Component {
+
     componentWillMount() {
         let entries = Object.entries(posts);
         let i = entries.length;
