@@ -9,6 +9,8 @@ import Background from './Background/Background';
 import sketch from "./Background/sketch"
 import Navbar from './Navbar/Navbar';
 
+const url = process.env.PUBLIC_URL;
+
 export default function() {
   return <>
     <Background 
@@ -18,9 +20,9 @@ export default function() {
     <Navbar />
     <Switch>
       <Route exact path={"/"} component={Home} />
-      <Route exact path={"/portfolio"} component={Portfolio} />
-      <Route exact path={"/blog"} component={Blog} />
-      <Route exact path={"/about"} component={About} />
+      <Route exact path={`${url}/portfolio`} component={Portfolio} />
+      <Route exact path={`${url}/blog`} component={Blog} />
+      <Route exact path={`${url}/about`} component={About} />
     </Switch>
   </>
 }
