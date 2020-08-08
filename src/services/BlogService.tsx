@@ -7,7 +7,7 @@ export const postCount    = entries.length;
 export const validPostID  =       (id  : number)             => entries[id] !== undefined;
 export const getAllPosts  = async ()                         => request(0, entries, true);
 export const getPostsFrom = async (from: number, to: number) => request(from, entries.slice(from, to));
-export const getPost      = async (id  : number)             => (await getPostsFrom(id, id + 1))[0]
+export const getPost      = async (id  : number)             => (await getPostsFrom(id, id + 1))[0];
 
 async function request(
     offset: number, posts: Array<[string, any]>, showNumber: boolean = false
