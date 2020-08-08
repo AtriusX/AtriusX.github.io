@@ -1,39 +1,30 @@
 import React, { Component } from 'react';
-import posts from '../posts/posts';
-import Blogpost from '../Blogpost/Blogpost';
+import { validPostID, getPost } from '../services/BlogService';
 
 export default class Post extends Component<any, { post: JSX.Element | undefined }> {
-    state = { post: undefined }
+    state = { post: undefined } // Default state for post component
 
     componentDidMount() {
         const { match: { params }} = this.props;
         let id = params.id - 1;
-        let entries = Object.entries(posts)
         // Ignore IDs that aren't valid
-        if (entries[id] === undefined) {
+        if (!validPostID(id)) {
             this.setState({ post: undefined });
             return;
         }
         // Process ID into post
-        let [name, file] = entries[id];
-        fetch(file).then(f => f.text()).then(text => this.setState({
-            post: <Blogpost title={name} text={text} />
-        }));
-    }
-
-    public render() {
-        if (this.state.post !== undefined) {
-            return <> 
-                {this.state.post}
-            </>
-        } else {
-            return <> 404 </>
-        }
+        getPost(id).then(post => this.setState({ post: post }));
     }
 
     componentDidUpdate(prevProps: any) {
         if (this.props.location !== prevProps.location) {
             this.componentDidMount()
         }
+    }
+
+    public render() {
+        return <>
+            {this.state.post !== undefined ? this.state.post : undefined }
+        </>
     }
 }
