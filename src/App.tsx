@@ -6,6 +6,7 @@ import Portfolio from './pages/Portfolio';
 import Blog from './pages/Blog';
 import Post from './pages/Post';
 import About from './pages/About';
+import NotFound from './pages/NotFound';
 import Background from './Background/Background';
 import sketch from "./Background/sketch"
 import Navbar from './Navbar/Navbar';
@@ -13,8 +14,8 @@ import Navbar from './Navbar/Navbar';
 export default function() {
   return <>
     <Background 
-    sketch={sketch} 
-    onP5Changed={ p => console.log(p) }
+      sketch={sketch} 
+      onP5Changed={ p => console.log(p) }
     />
     <Navbar />
     <Switch>
@@ -23,6 +24,7 @@ export default function() {
       <Route exact path={"/blog"} component={Blog} />
       <Route path={"/blog/:id"} component={Post} />
       <Route exact path={"/about"} component={About} />
+      <Route path={"*"} component={NotFound} />
     </Switch>
   </>
 }
