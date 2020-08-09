@@ -14,10 +14,8 @@ export default class About extends Component<any, { about: string }> {
     }
     
     public render() {
-        return <>
-            <div className={"about-container"}>
-                <Markdown source={this.state.about} />
-            </div>
-        </>
+        return <div className={"about-container"}>
+            <Markdown source={this.state.about} />
+        </div>
     }
 }
