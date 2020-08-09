@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { getPost } from '../services/BlogService';
+import NotFound from './NotFound';
 
 export default class Post extends Component<any, { post?: JSX.Element }> {
     state = { post: undefined } // Default state for post component
@@ -16,6 +17,6 @@ export default class Post extends Component<any, { post?: JSX.Element }> {
     }
 
     public render() {
-        return <>{this.state.post !== undefined ? this.state.post : undefined}</>
+        return <>{this.state.post !== undefined ? this.state.post : <NotFound />}</>
     }
 }
