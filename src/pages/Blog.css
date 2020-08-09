@@ -3,11 +3,11 @@
     padding-bottom: 5em;
 }
 
-#blog-container > .blogpost {
+#blog-container .blogpost {
     max-height: 250px;
 }
 
-#blog-container > .blogpost > .blog-content {
+#blog-container .blog-content {
     background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
     background-clip: text;
     -webkit-background-clip: text;
@@ -15,7 +15,7 @@
     max-height: 140px;
 }
 
-#blog-container > .blogpost > .blog-content > p > a {
+#blog-container .blog-content p a {
     text-decoration: none;
     pointer-events: none;
 }
