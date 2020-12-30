@@ -1,0 +1,16 @@
+ul {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #121212;
+    list-style: none;
+}
+
+li {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 1.6em;
+    font-weight: lighter;
+}

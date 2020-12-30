@@ -1,0 +1,12 @@
+.link {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    width: 100%;
+    line-height: 3em;
+    transition: all 0.2s;
+}
+
+.link:hover {
+    color: orange;
+}
