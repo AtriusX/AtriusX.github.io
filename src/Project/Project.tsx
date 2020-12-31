@@ -1,7 +1,7 @@
 import React from 'react';
 import './Project.css';
 
-export default function(props: { url: string, name: string }) {
+export default function Project(props: { url: string, name: string }) {
     return <a 
         className={"container"} 
         href={props.url} 

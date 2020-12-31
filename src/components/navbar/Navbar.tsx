@@ -1,18 +1,14 @@
 import React from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { LinkProps, Route, RouteProps, Switch } from 'react-router-dom'
 import './navbar.css';
-import Link from '../link/NavLink';
-  
-export type NavbarData = {
-    icon?: string,
+import Link from '../link/Link';
+
+export interface NavbarData {
     children?: React.ReactNode
 };
 
-export type NavItemData = {
-    text?: string, 
-    path: string,
-    component: React.ComponentType<any>,
-    exact?: boolean,
+export interface NavItemData extends RouteProps {
+    text?: string
 };
 
 function Navigation(props: NavbarData) {
@@ -34,8 +30,8 @@ function Navigation(props: NavbarData) {
 
 export class NavItem extends React.Component<NavItemData, NavItemData> {
     public render() {
-        return <li className={'navItem'}>
-            <Link path={this.props.path} text={this.props.text!!} />
+        return <li>
+            <Link to={this.props.path as string} text={this.props.text} />
         </li>
     }
 }

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Markdown from 'react-markdown';
 import './Blogpost.css';
 
-export default function(props: { id?: number, title: string, text: string }) {
+export default function Blogpost(props: { id?: number, title: string, text: string }) {
     let out;
     if (props.id !== undefined) 
         out = <Link to={`/blog/${props.id}`} className={"blog-title"}>
@@ -11,7 +11,6 @@ export default function(props: { id?: number, title: string, text: string }) {
         </Link> 
     else 
         out = <h1>{props.title}</h1>
-    
     return <div key={props.id} className={"blogpost"}>
         {out}
         <br/>

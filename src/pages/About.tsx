@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './About.css';
 import Markdown from 'react-markdown';
-
 export default class About extends Component<any, { about: string }> {
     constructor(props: any) {
         super(props);

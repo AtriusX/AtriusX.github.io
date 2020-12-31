@@ -17,14 +17,13 @@ async function request(
         posts.map(([title, file]) => fetch(file).then(r => [title, r.text()]))
     ).then(data => {
         // Map all post data to components
-        let posts = data.map(([title, content], index) => Promise.resolve(content).then(text =>
-            <Blogpost 
+        let posts = data.map(([title, content], index) => Promise.resolve(content).then(text => {
+            return <Blogpost 
                 key={offset + index + 1} 
                 id={showNumber ? offset + index + 1 : undefined} 
                 title={title as string} 
                 text={text} 
-            />
-        )).reverse();
+            /> })).reverse();
         // Render all posts into the container
         return Promise.all(posts);
     });

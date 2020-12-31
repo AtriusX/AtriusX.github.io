@@ -1,0 +1,36 @@
+.badge {
+    display: block;
+    width: 20em;
+    padding: 1.2em;
+}
+
+.badge p {
+    position: relative;
+    font-size: 18pt;
+    display: block;
+    width: 100%;
+    text-align: left;
+    z-index: 100;
+    white-space: normal;
+}
+
+.support {
+    display: flex;
+    font-weight: 700;
+    align-items: center;
+    border-radius: 0.5em;
+    justify-content: center;
+    box-shadow: 0 5px 30px -10px #000;
+    filter: hue-rotate(20deg);
+}
+
+.support:hover {
+    filter: hue-rotate(-20deg);
+    box-shadow: 0 5px 20px -10px #000;
+}
+
+.logo {
+    vertical-align: middle;
+    display: inline-block;
+    margin: 0.5em;
+}

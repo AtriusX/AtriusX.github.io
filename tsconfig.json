@@ -21,7 +21,8 @@
     "typeRoots": [
       "./node_modules/@types",
       "./src/globals.d.ts"
-    ]
+    ],
+    "noFallthroughCasesInSwitch": true
   },
   "include": [
     "src"

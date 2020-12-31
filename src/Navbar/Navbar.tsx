@@ -1,6 +1,4 @@
-import React from 'react';
-import Github from '../components/icon/Icon';
-import Button from '../components/link/NavLink';
+
 import './Navbar.css';
 
 export default function() {

@@ -6,12 +6,12 @@ import Blog from './pages/Blog';
 import Post from './pages/Post';
 import About from './pages/About';
 import NotFound from './pages/NotFound';
-// import Background from './Background/Background';
-// import sketch from "./Background/sketch"
 import Navigation, { NavItem } from './components/navbar/Navbar';
+import Paypal from './components/SupportBadge/SupportBadge'
 
-export default function() {
-  return <Navigation>
+export default function App() {
+  return <>
+  <Navigation>
       <NavItem text="Home" path="/" component={Home} exact />
       <NavItem text="Portfolio" path="/portfolio" component={Portfolio} exact />
       <NavItem text="Blog" path="/blog" component={Blog} exact />
@@ -19,6 +19,7 @@ export default function() {
       <NavItem text="About" path="/about" component={About} exact />
       <NavItem path="*" component={NotFound} />
     </Navigation>
+  </>
 }
     /* <Background 
       sketch={sketch} 

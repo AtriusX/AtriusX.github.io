@@ -1,10 +1,12 @@
 import React from 'react';
+import Markdown from 'react-markdown';
 import './Portfolio.css';
 
-export default function() {
+export default function Portfolio() {
+
+    let source = "# This area is still work in progress!\n### **Thank you for your interest, please check back later.**";
+    
     return <div className={"portfolio-container"}>
-        <h1>This area is still work in progress!</h1>
-        <br />
-        <h3>Thank you for your interest, please check back later.</h3>
+        <Markdown source={source} />    
     </div>
 }
