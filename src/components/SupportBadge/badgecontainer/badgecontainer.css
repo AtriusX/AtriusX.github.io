@@ -1,0 +1,14 @@
+.badge-container {
+	position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+	left: 50%;
+    transform: translateX(-50%);
+    align-content: center;
+}
+
+.badge {
+	margin: 0.5em 1em;
+    flex-basis: fit-content;
+}

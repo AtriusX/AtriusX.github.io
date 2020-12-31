@@ -1,17 +1,17 @@
 import React from 'react'
-import { LinkProps, Route, RouteProps, Switch } from 'react-router-dom'
-import './navbar.css';
-import Link from '../link/Link';
+import { Route, Switch } from 'react-router-dom'
+import NavItem from './navitem/NavItem';
+import './navigation.css';
 
-export interface NavbarData {
+export {
+    NavItem
+}
+
+export interface NavigationData {
     children?: React.ReactNode
 };
 
-export interface NavItemData extends RouteProps {
-    text?: string
-};
-
-function Navigation(props: NavbarData) {
+function Navigation(props: NavigationData) {
     let routes = Object.entries(props.children ?? []).map(([_, i]) => i) as Array<NavItem> 
     let items = routes.filter(a => a.props.text !== undefined);
     return <>
@@ -26,14 +26,6 @@ function Navigation(props: NavbarData) {
             )}
         </Switch>
     </>;
-}
-
-export class NavItem extends React.Component<NavItemData, NavItemData> {
-    public render() {
-        return <li>
-            <Link to={this.props.path as string} text={this.props.text} />
-        </li>
-    }
 }
 
 export default Navigation;

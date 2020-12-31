@@ -79,10 +79,6 @@ img {
 	100% { opacity: 1;   }
 }
 
-.paypal {
-	position: relative;
-	left: 50%;
-	transform: translateX(-50%);
-	margin: 1em 0 8em;
+.badge {
 	border-radius: 10px;
 }

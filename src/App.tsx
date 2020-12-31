@@ -6,8 +6,7 @@ import Blog from './pages/Blog';
 import Post from './pages/Post';
 import About from './pages/About';
 import NotFound from './pages/NotFound';
-import Navigation, { NavItem } from './components/navbar/Navbar';
-import Paypal from './components/SupportBadge/SupportBadge'
+import Navigation, { NavItem } from './components/navigation/Navigation';
 
 export default function App() {
   return <>
