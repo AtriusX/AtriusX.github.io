@@ -11,7 +11,7 @@ export interface BadgeProps extends HTMLProps<any> {
 function BadgeContainer(props: BadgeProps) {
     let { children, columnize, style, height, justify, align, ...others} = props;
     let css: CSSProperties = { ...style, 
-        flexDirection: columnize ? "column" : "row",
+        flexDirection: !!columnize ? "column" : "row",
         height: height ?? "fit-content",
         justifyContent: justify ?? "center",
         alignItems: align ?? "center"

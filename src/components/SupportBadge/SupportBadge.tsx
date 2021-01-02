@@ -19,14 +19,13 @@ export interface BadgeData extends HTMLProps<any> {
 
 function SupportBadge(props: BadgeData) {
     let { look, style, link, buttonText, className, children, width, flat, ...others } = props;
-    let css = { backgroundImage: look, boxShadow: flat === undefined ? "0 5px 30px -10px #000" : undefined };
+    let css = { backgroundImage: look, boxShadow: !flat ? "0 5px 30px -10px #000" : undefined };
     let Icon = props.icon
     let classes = `badge ${className}`;
     let content = <>
         <p>{children}</p>
         <br/>
     </>
-
     return (
         <div {...others} style={{...css, ...style, width: width ?? "fit-content"}} className={classes}>
             {children !== undefined ? content : ""}
