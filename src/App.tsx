@@ -10,7 +10,7 @@ import Navigation, { NavItem } from './components/navigation/Navigation';
 
 export default function App() {
   return <>
-  <Navigation>
+    <Navigation>
       <NavItem text="Home" path="/" component={Home} exact />
       <NavItem text="Portfolio" path="/portfolio" component={Portfolio} exact />
       <NavItem text="Blog" path="/blog" component={Blog} exact />

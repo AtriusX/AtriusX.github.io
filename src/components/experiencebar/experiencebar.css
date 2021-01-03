@@ -1,0 +1,105 @@
+.experience-bar {
+    position: relative;
+    display: inline-block;
+    width: 15em;
+    box-shadow: 0 0 60px -20px #000;
+    padding: 1em;
+    border-radius: 15px;
+    margin: 1em;
+}
+
+.bar {
+    position: relative;
+    border-radius: 10em;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    margin: 1em 0 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 1.25em;
+    background-color: gray;
+    overflow: hidden;
+}
+
+.progress {
+    filter: drop-shadow(25px 0 1.5em #37ecba);
+    position: absolute;
+    display: block;
+    height: 100%;
+}
+
+.time {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    z-index: 100;
+    font-weight: 800;
+    color: white;
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.topic {
+    text-align: left;
+    font-weight: 700;
+}
+
+.start {
+    float: right;
+    font-size: 12pt;
+    font-weight: 600;
+    color: #555;
+}
+
+.tech {
+    text-align: left;
+    color: #555;
+    display: flex;
+}
+
+.tech ul {
+    position: relative;
+    padding: 0.5em 1em;
+}
+
+.tech li {
+    font-weight: 700;
+}
+
+.tech[open] summary ~ * {
+    animation: sweep 0.5s ease-in-out;
+}
+
+@keyframes sweep {
+    0% { 
+        opacity:0; 
+        margin-left: -10px;
+    }
+    100% { 
+        opacity: 1; 
+        margin-left: 0;
+    }
+}
+
+.tech summary {
+    margin-top: 1em;
+}
+
+.keep-open[open] summary {
+    display: none;
+}
+
+.tech p {
+    margin-top: 1em;
+}
+
+.tech a {
+    font-style: italic;
+    margin-bottom: -1em;
+    color: unset;
+}

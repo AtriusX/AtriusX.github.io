@@ -6,6 +6,7 @@
 	left: 50%;
     transform: translateX(-50%);
     align-content: center;
+    margin-bottom: 3em;
 }
 
 .badge {
