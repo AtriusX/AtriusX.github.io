@@ -1,10 +1,12 @@
 import React from 'react';
-import Project from '../Project/Project';
 import Avatar from '../Avatar/Avatar';
 import './Home.css';
 import SupportBadge, { BadgeContainer } from '../components/supportbadge/SupportBadge';
 import { IoLogoGithub, IoLogoPaypal, IoLogoSoundcloud, IoLogoTwitter } from 'react-icons/io5';
 import ExperienceBar, { ExperienceItem } from '../components/experiencebar/ExperienceBar';
+import Typed from 'react-typed';
+import 'react-typed/dist/animatedCursor.css';
+import Granim from 'react-granim';
 
 const grads = [
     "linear-gradient( 101.2deg,  rgba(247,0,0,1) -21.9%, rgba(164,50,237,1) 92.2% )",
@@ -24,15 +26,25 @@ const grads = [
 
 export default function Home() {
   return <div id={"landing"}>
-    <span className={"landing_text"}>
+    {/* <span className={"landing_text"}>
         Hey! I'm Atrius!
-    </span>
-    <Avatar
+    </span> */}
+    <div className="gradient">
+        <Granim stateTransitionSpeed={50} isPausedWhenNotInView={true} />
+        <Typed style={{
+            fontSize: "80pt",
+            display: "block",
+            fontWeight: 700,
+        }} strings={[
+            "Hey! I'm Atri!", "Feel free to look around!"
+        ]} typeSpeed={40} startDelay={500} backDelay={1000} backSpeed={50} />
+    </div>
+    {/* <Avatar
         url={"https://avatars0.githubusercontent.com/u/7331441?s=460&u=d4025a5731648accb32ec70057dc1df5e514a588&v=4"}
     />
     <p className={"description"}>
         Check out some of the projects I've contributed to below~!
-    </p>
+    </p> */}
     <BadgeContainer height="20em" justify="space-between" columnize>
         <SupportBadge icon={IoLogoSoundcloud} link="https://soundcloud.com/atriusedm/apex" buttonText="Stream Apex"
             look={grads[0]}>

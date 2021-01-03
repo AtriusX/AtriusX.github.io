@@ -2,10 +2,7 @@ nav {
     position: fixed;
     width: 100%;
     z-index: 1000;
-}
-
-.padding {
-    margin-bottom: 3em;
+    height: 5em;
 }
 
 nav ul {

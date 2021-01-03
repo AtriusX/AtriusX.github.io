@@ -20,7 +20,6 @@ function Navigation(props: NavigationData) {
                {items}
             </ul>
         </nav>
-        <div className="padding"></div>
         <Switch>
             {routes.map((e, i) =>
                 <Route key={i} path={e.props.path} exact={e.props.exact} component={e.props.component} />
