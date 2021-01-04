@@ -1,0 +1,40 @@
+
+#footer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#footer img {
+    position: relative;
+    display: block;
+    height: 15vh;
+    padding: 2em 4em;
+}
+
+#footer li {
+    list-style: none;
+    font-size: 0.7em;
+    font-weight: 300;
+    padding: 0.4em 1em;
+}
+
+#footer ul {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    color: white;
+    padding: 0 1em;
+}
+
+
+#footer ul:first-child {
+    border-right: 1px solid rgba(255, 255, 255, 0.4);
+    text-align: right;
+}
+
+#footer ul:last-child {
+    border-left: 1px solid rgba(255, 255, 255, 0.4);
+    text-align: left;
+}

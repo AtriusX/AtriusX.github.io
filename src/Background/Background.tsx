@@ -3,6 +3,7 @@ import * as React from "react";
 import { Component, RefObject } from "react";
 
 export interface IProps {
+  id?: string;
   sketch: (sketch: p5) => void;
   onP5Changed?: (sketch: p5) => void;
 }
@@ -26,7 +27,7 @@ export default class P5Wrapper extends Component<IProps, {}> {
   }
 
   private setSketch(props: IProps) {
-    const current = this.wrapper.current;
+    const current = this.wrapper.current || document.getElementById(this.props.id!!);
     if (current) {
       if (current.childNodes[0]) {
         current.removeChild(current.childNodes[0]);

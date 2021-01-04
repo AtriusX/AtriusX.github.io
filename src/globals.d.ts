@@ -4,7 +4,8 @@ declare module '*.md' {
 }
 
 declare module 'react-granim' {
-
+    import { HTMLProps } from 'react';
+    
     type Direction = 'diagonal' | 'left-right' | 'top-bottom' | 'radial' | 'custom';
     type CustomDirection = {
         x0: string, y0: string, x1: string, y1: string
@@ -25,7 +26,7 @@ declare module 'react-granim' {
         blendingMode?: string;
     };
 
-    export interface GranimData {
+    export interface GranimData extends HTMLProps<any> {
         element?: string | HTMLCanvasElement;
         name?: string;
         elToSetClassOn?: string;

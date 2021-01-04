@@ -9,16 +9,14 @@ import NotFound from './pages/NotFound';
 import Navigation, { NavItem } from './components/navigation/Navigation';
 
 export default function App() {
-  return <>
-    <Navigation>
-      <NavItem text="Home" path="/" component={Home} exact />
-      <NavItem text="Portfolio" path="/portfolio" component={Portfolio} exact />
-      <NavItem text="Blog" path="/blog" component={Blog} exact />
-      <NavItem path="/blog/:id" component={Post} />
-      <NavItem text="About" path="/about" component={About} exact />
-      <NavItem path="*" component={NotFound} />
-    </Navigation>
-  </>
+  return <Navigation>
+    <NavItem text="Home" path="/" component={Home} exact />
+    <NavItem text="Portfolio" path="/portfolio" component={Portfolio} exact />
+    <NavItem text="Blog" path="/blog" component={Blog} exact />
+    <NavItem path="/blog/:id" component={Post} />
+    <NavItem text="About" path="/about" component={About} exact />
+    <NavItem path="*" component={NotFound} />
+  </Navigation>
 }
     /* <Background 
       sketch={sketch} 

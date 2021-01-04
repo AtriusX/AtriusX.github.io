@@ -1,51 +1,48 @@
 import * as p5 from "p5";
 
-export default function(sketch: p5) {
-    let particles: Array<Particle> = [];
-    let width  = () => sketch.windowWidth;
-    let height = () => sketch.windowHeight;
-    sketch.setup = async function() {
-        sketch.createCanvas(width(), height());
-        for (let i = 0; i < (width() < 768 ? 50 : 75); i++) {
-            particles.push(new Particle(
-                Math.random() * width(),
-                Math.random() * height(),
-                Math.random() - 0.5,
-                Math.random() - 0.5
-            ));
-        }
-    };
+let particles: Array<Particle> = [];
+let width  = (p5: p5) => p5.windowWidth;
+let height = (p5: p5) => p5.windowHeight;
+let mouse: Particle
 
-    let counter = 0;
-    sketch.draw = async function() {
-        document.body.style.backgroundColor = `hsl(${276 + Math.sin(counter += 0.001) * 70}, 100%, 10%)`;
-        sketch.background(30, 0, 50, 150);
-        particles.forEach(p => {
-            sketch.fill(sketch.color(`hsl(${p.hue += 2}, 100%, 60%)`));
-            if (sketch.windowWidth >= 768) {
-                sketch.stroke(p.x, p.y, 255, Math.abs(p.velX * 30 | Math.sin(p.velY)));
-                sketch.line(p.x, p.y, p.x ^ p.y, p.y << 2);
-            }
-            sketch.noStroke();
-            sketch.circle(p.x, p.y, 2);
-            p.x = (p.x + p.velX * 2) % width();
-            p.y = (p.y + p.velY * 2) % height();
-            
-            if (p.x < 0) p.x = width();
-            if (p.y < 0) p.y = height();
-            // Randomly change velocity
-            if (Math.random() * 100 > 99) {
-                p.velX = Math.random() * 2 - 1;
-                p.velY = Math.random() * 2 - 1;
-            }
-            // Modulate color
-            if (p.hue > 230) p.hue = 170;
-        });
+export async function setup(p5: p5, canvasRef: Element) {
+    p5.createCanvas(width(p5), 900).parent(canvasRef);
+    mouse = new Particle(0, 0, 0, 0);
+    for (let i = 0; i < 100; i++) {
+        particles.push(new Particle(
+            Math.random() * width(p5),
+            Math.random() * height(p5),
+            Math.random() - 0.5,
+            Math.random() - 0.5
+        ));
     }
+    particles.push(mouse);
+    resized(p5);
+};
 
-    sketch.windowResized = function() {
-        sketch.resizeCanvas(width(), height());
-    }
+export async function draw(p5: p5) {
+    p5.clear();
+    p5.background(p5.color("rgba(0,0,0,0.3)"))
+    particles.forEach(p => {
+        p5.fill(p5.color(`hsl(${p.hue += 2}, 100%, 60%)`));
+        // Rotate hue
+        p.hue %= 360;
+        p.connect(p5, particles);
+        p5.circle(p.x, p.y, 3);
+        
+        p.x = (p.x + p.velX * 2) % width(p5);
+        p.y = (p.y + p.velY * 2) % height(p5);
+        
+        if (p.x < 0) p.x = width(p5);
+        if (p.y < 0) p.y = height(p5);
+
+    });
+    mouse.x = p5.mouseX;
+    mouse.y = p5.mouseY;
+}
+
+export function resized(p5: p5) {
+    p5.resizeCanvas(width(p5), height(p5));
 }
 
 class Particle {
@@ -53,6 +50,20 @@ class Particle {
 
     constructor(public x: number, public y: number, public velX: number, public velY: number) {
         this.hue = Math.floor(170 + Math.random() * 60);
+    }
+
+    private counter: number = 0;
+    public connect(p5: p5, particles: Array<Particle>) {
+        particles.forEach(p => {
+            if (p === this) return;
+            let dist = p5.dist(this.x, this.y, p.x, p.y);
+            if (dist < 150) {
+                let alpha = 150 - dist;
+                p5.stroke(this.y | (this.counter - p.y), this.x | (p.y - this.counter), (p.x | this.counter) & this.y, alpha);
+                p5.line(this.x, this.y, p.x, p.y);
+            }
+        });
+        this.counter += this.counter % 500000;        
     }
 }
 
