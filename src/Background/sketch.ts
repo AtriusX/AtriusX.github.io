@@ -6,9 +6,9 @@ let height = (p5: p5) => p5.windowHeight;
 let mouse: Particle
 
 export async function setup(p5: p5, canvasRef: Element) {
+    p5.createCanvas(width(p5), 900).parent(canvasRef);
     if (particles.length !== 0) 
         return;
-    p5.createCanvas(width(p5), 900).parent(canvasRef);
     mouse = new Particle(0, 0, 0, 0);
     for (let i = 0; i < width(p5) / 10; i++) {
         particles.push(new Particle(

@@ -12,6 +12,7 @@ export interface NavigationData extends HTMLProps<any> {
     transparentScrolling?: boolean;
     startTransparent?: boolean;
     opacity?: number;
+    solidPosition?: number
 };
 
 class Navigation extends Component<NavigationData, NavigationData> {
@@ -20,8 +21,7 @@ class Navigation extends Component<NavigationData, NavigationData> {
     constructor(props: NavigationData) {
         super(props);
         this.state = {
-            background: props.background,
-            opacity: props.opacity
+            background: "transparent",
         };
     }
 
@@ -29,11 +29,6 @@ class Navigation extends Component<NavigationData, NavigationData> {
         if (!!this.props.transparentScrolling) {
             this.scrollElem = document.querySelector("#landing") ?? undefined;        
             this.scrollElem?.addEventListener('scroll', this.scroll.bind(this));
-            if (!!this.props.startTransparent) {
-                this.setState({
-                    background: "transparent"
-                })
-            }
         }
     }
 
@@ -41,22 +36,11 @@ class Navigation extends Component<NavigationData, NavigationData> {
     private counter: number = 0;
     
     private scroll() {
-        let { background } = this.props;
-        let temp = this.scrollElem?.scrollTop ?? 0;
-        if (temp > this.oldPosition) {
-            if (this.counter++ > 5) {
-                this.setState({
-                    opacity: 0,
-                });
-            } else this.counter++;
-        } else {
-            this.setState({
-                opacity: 1,
-                background: background
-            });
-            this.counter = 0;
-        }
-        this.oldPosition = temp;
+        let breakpoint = (this.scrollElem?.scrollTop ?? 0);
+        let { solidPosition, background } = this.props;
+        this.setState({
+            background: breakpoint > (solidPosition ?? 0) ? background : "transparent"
+        });
     }
 
     render() {
