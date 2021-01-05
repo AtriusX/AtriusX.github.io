@@ -1,4 +1,3 @@
-
 #footer {
     position: relative;
     display: flex;
@@ -10,14 +9,20 @@
     position: relative;
     display: block;
     height: 15vh;
-    padding: 2em 4em;
+    margin: 2em 4em;
+    transition: all 0.1s;
+    border-radius: 100em;
+}
+
+#footer img:hover {
+    filter: drop-shadow(0 0 3px white);
 }
 
 #footer li {
     list-style: none;
     font-size: 0.7em;
     font-weight: 300;
-    padding: 0.4em 1em;
+    padding: 0.2em 1em;
 }
 
 #footer ul {
@@ -27,7 +32,6 @@
     color: white;
     padding: 0 1em;
 }
-
 
 #footer ul:first-child {
     border-right: 1px solid rgba(255, 255, 255, 0.4);

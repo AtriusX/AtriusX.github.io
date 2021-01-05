@@ -37,7 +37,7 @@ function Footer(props: FooterData) {
 }
 
 function link(items: Array<FooterItem>) {
-    return items.map((e, i) => <li><ExternalLink key={i} to={e.link} text={e.text} /></li>);
+    return items.map((e, i) => <li key={i}><ExternalLink to={e.link} text={e.text} /></li>);
 }
 
 export default Footer;

@@ -8,9 +8,8 @@
 
 .badge p {
     position: relative;
-    font-size: 18pt;
+    font-size: 1em;
     display: block;
-    width: 100%;
     text-align: left;
     z-index: 100;
     white-space: normal;

@@ -9,7 +9,7 @@ import Sketch from 'react-p5';
 import { draw, setup, resized } from '../Background/sketch';
 import Footer from '../components/footer/Footer';
 import icon from '../logo.png';
-import { ExternalLink } from '../components/link/Link';
+import Navigation from '../components/navigation/Navigation';
 
 const grads = [
   "linear-gradient( 101.2deg,  rgba(247,0,0,1) -21.9%, rgba(164,50,237,1) 92.2% )",
@@ -27,7 +27,11 @@ const grads = [
   // "linear-gradient(to right, #eea2a2 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%)"
 ];
 
-export default function Home() {
+export interface HomeData {
+  navigation?: Navigation
+}
+
+export default function Home(props: HomeData) {
   return <div id={"landing"}>
     <div className="gradient">
       <Granim stateTransitionSpeed={0} id="gradient" />
@@ -43,7 +47,7 @@ export default function Home() {
         </SupportBadge>
         <SupportBadge icon={IoLogoPaypal} link="https://paypal.me/Atrius" flatText
           look={grads[Math.floor(Math.random() * grads.length)]}>
-          Please consider supporting Atri's work through Paypal!
+          Please consider supporting Atri's<br/> work through Paypal!
         </SupportBadge>
         <SupportBadge icon={IoLogoTwitter} link="https://twitter.com/ImAtrius" buttonText="Follow" flatText
           look={grads[Math.floor(Math.random() * grads.length)]}>
@@ -81,8 +85,7 @@ export default function Home() {
         <ExperienceBar startDate="9/1/2010" topic="HTML" />
         <ExperienceBar startDate="9/8/2010" topic="CSS" />
       </div>
-      <Footer icon={icon} rightBias links={[
-        { text: "Soundcloud", link: "https://soundcloud.com/AtriusEDM"},
+      <Footer icon={icon} links={[
         { text: "Soundcloud", link: "https://soundcloud.com/AtriusEDM"},
         { text: "Github", link: "https://github.com/AtriusX"},
         { text: "Twitter", link: "https://twitter.com/ImAtrius"},

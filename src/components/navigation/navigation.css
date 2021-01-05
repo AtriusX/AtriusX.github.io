@@ -3,13 +3,13 @@ nav {
     width: 100%;
     z-index: 1000;
     height: 5em;
+    transition: all 0.2s;
 }
 
 nav ul {
     width: 100%;
     display: flex;
     justify-content: center;
-    background-color: #121212;
     list-style: none;
 }
 

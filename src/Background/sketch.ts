@@ -6,9 +6,11 @@ let height = (p5: p5) => p5.windowHeight;
 let mouse: Particle
 
 export async function setup(p5: p5, canvasRef: Element) {
+    if (particles.length !== 0) 
+        return;
     p5.createCanvas(width(p5), 900).parent(canvasRef);
     mouse = new Particle(0, 0, 0, 0);
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < width(p5) / 10; i++) {
         particles.push(new Particle(
             Math.random() * width(p5),
             Math.random() * height(p5),
@@ -21,6 +23,8 @@ export async function setup(p5: p5, canvasRef: Element) {
 };
 
 export async function draw(p5: p5) {
+    if (particles.length === 0) return;
+
     p5.clear();
     p5.background(p5.color("rgba(0,0,0,0.3)"))
     particles.forEach(p => {

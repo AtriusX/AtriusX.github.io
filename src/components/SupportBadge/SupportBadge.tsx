@@ -9,17 +9,17 @@ export {
 }
 
 export interface BadgeData extends HTMLProps<any> {
-    icon?: IconType,
-    buttonText?: string,
-    link: string,
-    className?: string,
-    look?: string,
-    flat?: boolean,
-    flatText?: boolean
+    icon?: IconType;
+    buttonText?: string;
+    link: string;
+    className?: string;
+    look?: string;
+    flat?: boolean;
+    flatText?: boolean;
 }
 
 function SupportBadge(props: BadgeData) {
-    let { look, style, link, buttonText, className, children, width, flat, flatText, ...others } = props;
+    let { look, style, link, buttonText, className, children, width, flat, flatText, icon, ...others } = props;
     let css = { 
         backgroundImage: look, 
         boxShadow: !flat ? "0 0px 60px -20px #000" : undefined,
