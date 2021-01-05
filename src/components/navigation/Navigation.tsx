@@ -39,17 +39,16 @@ class Navigation extends Component<NavigationData, NavigationData> {
 
     private oldPosition: number = 0;
     private counter: number = 0;
-    scroll() {
+    
+    private scroll() {
         let { background } = this.props;
         let temp = this.scrollElem?.scrollTop ?? 0;
         if (temp > this.oldPosition) {
-            if (this.counter > 5) {
+            if (this.counter++ > 5) {
                 this.setState({
                     opacity: 0,
                 });
-            } else {
-                this.counter++;
-            }
+            } else this.counter++;
         } else {
             this.setState({
                 opacity: 1,
@@ -58,7 +57,6 @@ class Navigation extends Component<NavigationData, NavigationData> {
             this.counter = 0;
         }
         this.oldPosition = temp;
-
     }
 
     render() {

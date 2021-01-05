@@ -47,7 +47,7 @@ export default function Home(props: HomeData) {
         </SupportBadge>
         <SupportBadge icon={IoLogoPaypal} link="https://paypal.me/Atrius" flatText
           look={grads[Math.floor(Math.random() * grads.length)]}>
-          Please consider supporting Atri's<br/> work through Paypal!
+          Please consider supporting Atri's work through Paypal!
         </SupportBadge>
         <SupportBadge icon={IoLogoTwitter} link="https://twitter.com/ImAtrius" buttonText="Follow" flatText
           look={grads[Math.floor(Math.random() * grads.length)]}>
@@ -69,21 +69,21 @@ export default function Home(props: HomeData) {
         justifyContent: "space-evenly",
         paddingBottom: "1em"
       }}>
-        <ExperienceBar startDate="7/15/2017" topic="Kotlin">
+        <ExperienceBar startDate="7/15/2017" topic="Kotlin" rounded>
           <ExperienceItem text="DungeonKit" to="https://github.com/atriusx/dungeonkit" />
         </ExperienceBar>
-        <ExperienceBar startDate="9/10/2013" topic="Java" keepOpen open>
+        <ExperienceBar startDate="9/10/2013" topic="Java" keepOpen open rounded>
           <ExperienceItem text="JDA" to="https://github.com/DV8FromTheWorld/JDA" />
           <ExperienceItem text="Spigot/Paper" />
         </ExperienceBar>
-        <ExperienceBar startDate="6/10/2019" topic="Typescript">
+        <ExperienceBar startDate="6/10/2019" topic="Typescript" rounded>
           <ExperienceItem text="React" />
         </ExperienceBar>
         <ExperienceBar startDate="5/13/2017" topic="Javascript" open rounded>
           <ExperienceItem text="React" />
         </ExperienceBar>
-        <ExperienceBar startDate="9/1/2010" topic="HTML" />
-        <ExperienceBar startDate="9/8/2010" topic="CSS" />
+        <ExperienceBar startDate="9/1/2010" topic="HTML" rounded />
+        <ExperienceBar startDate="9/8/2010" topic="CSS" rounded />
       </div>
       <Footer icon={icon} links={[
         { text: "Soundcloud", link: "https://soundcloud.com/AtriusEDM"},

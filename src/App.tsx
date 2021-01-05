@@ -18,7 +18,3 @@ export default function App() {
     <NavItem path="*" component={NotFound} />
   </Navigation>
 }
-    /* <Background 
-      sketch={sketch} 
-      onP5Changed={ p => console.log(p) }
-    /> */

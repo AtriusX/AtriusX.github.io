@@ -13,6 +13,7 @@
     "@types/react": "^16.14.2",
     "@types/react-dom": "^16.9.10",
     "@types/react-router-dom": "^5.1.6",
+    "@types/react-visibility-sensor": "^5.1.0",
     "p5": "^1.2.0",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
@@ -23,6 +24,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "^4.0.1",
     "react-typed": "^1.2.0",
+    "react-visibility-sensor": "^5.1.1",
     "rebass": "^4.0.7",
     "typescript": "~3.7.2"
   },
