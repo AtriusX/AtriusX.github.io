@@ -27,7 +27,7 @@ class Navigation extends Component<NavigationData, NavigationData> {
 
     componentDidMount() {
         if (!!this.props.transparentScrolling) {
-            this.scrollElem = document.querySelector("#landing") ?? undefined;        
+            this.scrollElem = document.getElementById("landing") ?? undefined;        
             this.scrollElem?.addEventListener('scroll', this.scroll.bind(this));
         }
     }

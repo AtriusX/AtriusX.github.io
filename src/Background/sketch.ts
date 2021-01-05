@@ -12,7 +12,7 @@ export async function setup(p5: p5, canvasRef: Element) {
         return;
     elem = p5.createCanvas(width(p5), 900).parent(canvasRef);
     mouse = new Particle(0, 0, 0, 0);
-    for (let i = 0; i < width(p5) / 10; i++) {
+    for (let i = 0; i < 125; i++) {
         particles.push(new Particle(
             Math.random() * width(p5),
             Math.random() * height(p5),
@@ -23,6 +23,13 @@ export async function setup(p5: p5, canvasRef: Element) {
     particles.push(mouse);
     resized(p5);
 };
+
+let waves: Array<Wave> = [];
+
+export async function onClick(p5: p5) {
+    for (let i = 0; i < 3; i++)
+        waves.push(new Wave(p5, p5.mouseX, p5.mouseY, i * 10, 10));
+}
 
 export async function draw(p5: p5) {
 
@@ -44,6 +51,11 @@ export async function draw(p5: p5) {
     });
     mouse.x = p5.mouseX;
     mouse.y = p5.mouseY;
+    // Wave animations
+    waves.forEach(w => {
+        if (!w.isDead()) 
+            w.update();
+    });
 }
 
 export function resized(p5: p5) {
@@ -77,3 +89,28 @@ class Particle {
     }
 }
 
+class Wave {
+    private p5: p5;
+    private size: number;
+    private speed: number;
+
+    constructor(p5: p5, public x: number, public y: number, size: number, speed: number) {
+        this.p5 = p5;
+        this.size = size;
+        this.speed = speed;
+    }
+
+    public update() {
+        let p5: p5 = this.p5;
+        p5.push();
+        p5.noFill();
+        p5.stroke(p5.color(`hsla(${(this.size / 2) % 360}, 100%, 60%, ${1 - this.size / 750})`));
+        p5.circle(this.x, this.y, this.size);
+        p5.pop();
+        this.size += this.speed;
+    }
+
+    public isDead() {
+        return this.size > 750;
+    }
+}
