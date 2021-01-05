@@ -22,7 +22,7 @@ function SupportBadge(props: BadgeData) {
     let { look, style, link, buttonText, className, children, width, flat, flatText, icon, ...others } = props;
     let css = { 
         backgroundImage: look, 
-        boxShadow: !flat ? "0 0px 60px -20px #000" : undefined,
+        boxShadow: !flat ? "0 0 60px -20px #000" : undefined,
         textShadow: !flatText ? "0 0 5px #333": undefined 
     };
     let Icon = props.icon

@@ -34,24 +34,24 @@ class ExperienceBar extends Component<ExperienceData, { width: number }> {
             borderRadius: !!rounded ? "10em" : undefined
         };
         let [width, years, start] = this.getData(startDate);
-        return <ReactVisibilitySensor partialVisibility onChange={v => v ? this.updateWidth(width) : undefined}>
-            <div {...others} className={"experience-bar"}>
-                <div className="flex-container">
-                    <p className="topic">{topic}</p>
-                    <p className="start">{`Started in ${start}`}</p>
-                </div>
+        return <div {...others} className={"experience-bar"}>
+            <div className="flex-container">
+                <p className="topic">{topic}</p>
+                <p className="start">{`Started in ${start}`}</p>
+            </div>
+            <ReactVisibilitySensor onChange={v => v ? this.updateWidth(width) : undefined}>
                 <div className="bar">
                     <p className="time">{years}</p>
-                    <span style={progress} className="progress"></span>
+                        <span style={progress} className="progress"></span>
                 </div>
-                {!!children ? <details className={`tech ${!!keepOpen ? "keep-open" : ""}`} open={open}>
-                    <summary>Related</summary>
-                    <ul className="tect-items">
-                        {children}
-                    </ul>
-                </details> : ""}
-            </div>
-        </ReactVisibilitySensor>
+            </ReactVisibilitySensor>
+            {!!children ? <details className={`tech ${!!keepOpen ? "keep-open" : ""}`} open={open}>
+                <summary>Related</summary>
+                <ul className="tect-items">
+                    {children}
+                </ul>
+            </details> : ""}
+        </div>
     }
 
     private getData(startDate: string): [number, number, number] {

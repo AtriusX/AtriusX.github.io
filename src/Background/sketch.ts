@@ -5,10 +5,12 @@ let width  = (p5: p5) => p5.windowWidth;
 let height = (p5: p5) => p5.windowHeight;
 let mouse: Particle
 
+let elem: p5.Element;
+
 export async function setup(p5: p5, canvasRef: Element) {
-    p5.createCanvas(width(p5), 900).parent(canvasRef);
-    if (particles.length !== 0) 
+    if (elem !== undefined) 
         return;
+    elem = p5.createCanvas(width(p5), 900).parent(canvasRef);
     mouse = new Particle(0, 0, 0, 0);
     for (let i = 0; i < width(p5) / 10; i++) {
         particles.push(new Particle(
@@ -23,10 +25,9 @@ export async function setup(p5: p5, canvasRef: Element) {
 };
 
 export async function draw(p5: p5) {
-    if (particles.length === 0) return;
 
     p5.clear();
-    p5.background(p5.color("rgba(0,0,0,0.3)"))
+    p5.background(p5.color("rgba(0,0,0,0.4)"))
     particles.forEach(p => {
         p5.fill(p5.color(`hsl(${p.hue += 2}, 100%, 60%)`));
         // Rotate hue
@@ -36,7 +37,7 @@ export async function draw(p5: p5) {
         
         p.x = (p.x + p.velX * 2) % width(p5);
         p.y = (p.y + p.velY * 2) % height(p5);
-        
+
         if (p.x < 0) p.x = width(p5);
         if (p.y < 0) p.y = height(p5);
 
@@ -63,7 +64,12 @@ class Particle {
             let dist = p5.dist(this.x, this.y, p.x, p.y);
             if (dist < 150) {
                 let alpha = 150 - dist;
-                p5.stroke(this.y | (this.counter - p.y), this.x | (p.y - this.counter), (p.x | this.counter) & this.y, alpha);
+                p5.stroke(
+                    Math.max(100, Math.sin((this.x + p.y) / 125) * 255), 
+                    Math.max(100, Math.cos((p.y - this.x + p.x | this.y) / 110) * 255), 
+                    Math.max(100, Math.cos(Math.sin(this.y - p.x) / 100) * 255), 
+                    alpha
+                );
                 p5.line(this.x, this.y, p.x, p.y);
             }
         });

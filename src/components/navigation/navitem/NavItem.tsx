@@ -8,7 +8,7 @@ export interface NavItemData extends RouteProps {
 
 class NavItem extends React.Component<NavItemData, NavItemData> {
     public render() {
-        return <li>
+        return <li className="nav-item">
             <Link to={this.props.path as string} text={this.props.text} />
         </li>
     }

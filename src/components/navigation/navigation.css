@@ -21,3 +21,13 @@ nav li {
     font-size: 1.6em;
     font-weight: lighter;
 }
+
+.nav-item {
+    padding: 0 1em;
+    border-radius: 100px;
+    transition: all 0.3s;
+}
+
+.nav-item:hover {
+    backdrop-filter: blur(10px);
+}

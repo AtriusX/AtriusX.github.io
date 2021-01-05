@@ -9,7 +9,7 @@ import NotFound from './pages/NotFound';
 import Navigation, { NavItem } from './components/navigation/Navigation';
 
 export default function App() {
-  return <Navigation ref={React.createRef()} background={"#121212"} transparentScrolling solidPosition={200}>
+  return <Navigation background={"#121212"} transparentScrolling solidPosition={200}>
     <NavItem text="Home" path="/" component={Home} exact />
     <NavItem text="Portfolio" path="/portfolio" component={Portfolio} exact />
     <NavItem text="Blog" path="/blog" component={Blog} exact />
