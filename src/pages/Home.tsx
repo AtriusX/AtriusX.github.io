@@ -6,7 +6,7 @@ import ExperienceBar, { ExperienceItem } from '../components/experiencebar/Exper
 import Typed from 'react-typed';
 import Granim from 'react-granim';
 import Sketch from 'react-p5';
-import { draw, setup, resized, onClick } from '../Background/sketch';
+import { draw, setup, resized, onClick, onDrag } from '../Background/sketch';
 import Footer from '../components/footer/Footer';
 import icon from '../logo.png';
 
@@ -30,7 +30,7 @@ export default function Home() {
   return <div id={"landing"}>
     <div className="gradient">
       <Granim stateTransitionSpeed={0} id="gradient" />
-      <Sketch setup={setup} draw={draw} windowResized={resized} mouseClicked={onClick} className="sketch" />
+      <Sketch setup={setup} draw={draw} windowResized={resized} mouseDragged={onDrag} mouseClicked={onClick} className="sketch" />
       <Typed className="landing-text" typeSpeed={40} startDelay={500} fadeOut fadeOutDelay={1000} showCursor={false} strings={[
         "Hey! I'm Atri!", "Feel free to look around!"
       ]} />
@@ -64,7 +64,7 @@ export default function Home() {
         justifyContent: "space-evenly",
         paddingBottom: "1em"
       }}>
-        <ExperienceBar startDate="7/15/2017" topic="Kotlin" rounded>
+        <ExperienceBar startDate="7/15/2017" color={grads[0]} glow="rgba(164,50,237,1)" topic="Kotlin" rounded>
           <ExperienceItem text="DungeonKit" to="https://github.com/atriusx/dungeonkit" />
         </ExperienceBar>
         <ExperienceBar startDate="9/10/2013" topic="Java" keepOpen open rounded>

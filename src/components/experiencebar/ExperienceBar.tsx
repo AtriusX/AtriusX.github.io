@@ -11,6 +11,7 @@ export interface ExperienceData extends HTMLProps<any> {
     topic: string;
     startDate: string;
     color?: string;
+    glow?: string;
     rounded?: boolean;
     keepOpen?: boolean;
 }
@@ -27,11 +28,12 @@ class ExperienceBar extends Component<ExperienceData, { width: number }> {
     }
 
     render() {
-        let { topic, startDate, color, rounded, keepOpen, children, open,...others } = this.props;
+        let { topic, startDate, color, glow, rounded, keepOpen, children, open,...others } = this.props;
         let progress: CSSProperties = {
             width: this.state.width,
             background: color || "#37ecba",
-            borderRadius: !!rounded ? "10em" : undefined
+            borderRadius: !!rounded ? "10em" : undefined,
+            filter: !!glow ? `drop-shadow(25px 0 1.5em ${glow})` : undefined
         };
         let [width, years, start] = this.getData(startDate);
         return <div {...others} className={"experience-bar"}>

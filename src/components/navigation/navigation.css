@@ -4,6 +4,9 @@ nav {
     z-index: 1000;
     height: 5em;
     transition: all 0.2s;
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
 }
 
 nav ul {

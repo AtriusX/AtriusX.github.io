@@ -23,6 +23,9 @@ img {
 	font-size: 4em;
 	display: block;
 	font-weight: 700;
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
 }
 
 @media screen and (min-width: 414px) {

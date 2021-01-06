@@ -23,7 +23,6 @@
 }
 
 .progress {
-    filter: drop-shadow(25px 0 1.5em #37ecba);
     position: absolute;
     display: block;
     height: 100%;
