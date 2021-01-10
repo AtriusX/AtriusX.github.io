@@ -5,15 +5,11 @@ let width  = (p5: p5) => p5.windowWidth;
 let height = (p5: p5) => p5.windowHeight;
 let mouse: Particle
 
-let elem: p5.Element;
-
 export async function setup(p5: p5, canvasRef: Element) {
-    if (elem !== undefined) 
-        return;
+    p5.createCanvas(width(p5), height(p5)).parent(canvasRef);    
     p5.frameRate(120);
-    elem = p5.createCanvas(width(p5), 900).parent(canvasRef);
     mouse = new Particle(0, 0, 0, 0);
-    for (let i = 0; i < 125; i++) {
+    for (let i = 0; particles.length < 125; i++) {
         particles.push(new Particle(
             Math.random() * width(p5),
             Math.random() * height(p5),
@@ -22,8 +18,7 @@ export async function setup(p5: p5, canvasRef: Element) {
         ));
     }
     particles.push(mouse);
-    resized(p5);
-};
+}
 
 let waves: Array<Wave> = [];
 
